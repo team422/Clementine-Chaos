@@ -17,5 +17,22 @@ public class PlayerController : MonoBehaviour
             deltaY *= speedCap / speed;
         }
         transform.position = new Vector3(transform.position.x + deltaX, transform.position.y + deltaY, transform.position.y + deltaY - 0.97f); //Z is same as Y, but at bottom of rect
+
+        if ((deltaX > 0 && transform.localScale.x > 0) || (deltaX < 0 && transform.localScale.x < 0)) {
+            //flip to be facing the right way
+            Vector3 scale = transform.localScale;
+            scale.x *= -1;
+            transform.localScale = scale;
+            GetComponent<CircleCollider2D>().transform.localScale = scale;
+
+            Vector3 position = transform.localPosition;
+            if (deltaX > 0) {
+                position.x += 1f;
+            } else {
+                position.x -= 1f;
+            }
+            transform.localPosition = position;
+            GetComponent<CircleCollider2D>().transform.localPosition = position;
+        }
     }
 }
