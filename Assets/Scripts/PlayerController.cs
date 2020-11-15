@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     // FixedUpdate is called at a fixed interval and is independent of frame rate
     void FixedUpdate()
     {
-        float speedCap = 0.4f;
+        float speedCap = 0.2f;
         float deltaX = Input.GetAxis("Horizontal") * speedCap;
         float deltaY = Input.GetAxis("Vertical") * speedCap;
         float speed = (float) Math.Sqrt(deltaX*deltaX + deltaY*deltaY);
