@@ -13,21 +13,35 @@ public class TcpLink : MonoBehaviour
     #region private members 	
     private TcpClient socketConnection;
     private Thread clientReceiveThread;
+    private string serverMessage;
+    private string clientMessage;
     #endregion
     // Start is called before the first frame update
     void Start()
     {
+        serverMessage = "No Message Received";
+        clientMessage = "Test Client Connection";
         ConnectToTcpServer();
     }
 
     // Update is called once per frame
+    float period = 0.0f;
+
     void Update()
     {
-     
-        if (Input.GetKey(KeyCode.Space))
+        if (period > .1f)
         {
             SendMessage();
+            period = period-.1f;
         }
+        period += UnityEngine.Time.deltaTime;
+    }
+    
+    public string serverOut() {
+        return serverMessage;
+    }
+    public void sendMessageToServer(string input) {
+        clientMessage = input;
     }
     private void ConnectToTcpServer()
     {
@@ -60,7 +74,7 @@ public class TcpLink : MonoBehaviour
                         var incommingData = new byte[length];
                         Array.Copy(bytes, 0, incommingData, 0, length);
                         // Convert byte array to string message. 						
-                        string serverMessage = Encoding.ASCII.GetString(incommingData);
+                        serverMessage = Encoding.ASCII.GetString(incommingData);
                         Debug.Log("server message received as: " + serverMessage);
                     }
                 }
@@ -86,12 +100,12 @@ public class TcpLink : MonoBehaviour
             NetworkStream stream = socketConnection.GetStream();
             if (stream.CanWrite)
             {
-                string clientMessage = "This is a message from one of your clients.";
+          
                 // Convert string message to byte array.                 
                 byte[] clientMessageAsByteArray = Encoding.ASCII.GetBytes(clientMessage);
                 // Write byte array to socketConnection stream.                 
                 stream.Write(clientMessageAsByteArray, 0, clientMessageAsByteArray.Length);
-                Debug.Log("Client sent his message - should be received by server");
+                //Debug.Log("Client sent his message - should be received by server");
             }
         }
         catch (SocketException socketException)
