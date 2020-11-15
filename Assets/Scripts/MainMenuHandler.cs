@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainMenuHandler : MonoBehaviour
 {
 
-    public static String selected = "";
+    public static string selected = "";
 
     public static bool isBrownSelected = false;
     public static bool isYellowSelected = false;

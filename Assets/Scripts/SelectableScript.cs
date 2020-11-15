@@ -6,7 +6,11 @@ using UnityEngine.EventSystems;
 
 public class SelectableScript : MonoBehaviour, ISelectHandler
 {
-    void OnSelect(BaseEventData eventData) {
+    public void OnSelect(BaseEventData eventData) {
+        MainMenuHandler.selected = this.gameObject.name;
+    }
+
+    public void OnDeselect(BaseEventData eventData) {
         //
     }
 }

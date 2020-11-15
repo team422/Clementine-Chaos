@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 631138262}
   - component: {fileID: 631138261}
   - component: {fileID: 631138260}
+  - component: {fileID: 631138263}
   m_Layer: 0
   m_Name: Yellow
   m_TagString: Untagged
@@ -317,6 +318,18 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 631138260}
+--- !u!114 &631138263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631138258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33af8b52041244a91a01dd6a481de44f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &820449414
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,6 +408,7 @@ GameObject:
   - component: {fileID: 897943697}
   - component: {fileID: 897943696}
   - component: {fileID: 897943695}
+  - component: {fileID: 897943698}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -498,6 +512,18 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 897943695}
+--- !u!114 &897943698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897943693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33af8b52041244a91a01dd6a481de44f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1190378290
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +614,7 @@ GameObject:
   - component: {fileID: 1313520143}
   - component: {fileID: 1313520142}
   - component: {fileID: 1313520141}
+  - component: {fileID: 1313520144}
   m_Layer: 0
   m_Name: Purple
   m_TagString: Untagged
@@ -691,6 +718,18 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1313520141}
+--- !u!114 &1313520144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313520139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33af8b52041244a91a01dd6a481de44f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1398193884
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,6 +742,7 @@ GameObject:
   - component: {fileID: 1398193888}
   - component: {fileID: 1398193887}
   - component: {fileID: 1398193886}
+  - component: {fileID: 1398193889}
   m_Layer: 0
   m_Name: Brown
   m_TagString: Untagged
@@ -806,6 +846,18 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1398193886}
+--- !u!114 &1398193889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398193884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33af8b52041244a91a01dd6a481de44f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1638840469
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,10 +902,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2e14f977aa24bb7bc56616849c6c15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brown: {fileID: 1398193884}
-  yellow: {fileID: 631138258}
-  blue: {fileID: 897943693}
-  purple: {fileID: 1313520139}
 --- !u!1 &1816298824
 GameObject:
   m_ObjectHideFlags: 0
