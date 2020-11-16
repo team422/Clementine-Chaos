@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     // FixedUpdate is called at a fixed interval and is independent of frame rate
     void FixedUpdate()
     {
+        //MainMenuHandler.selected = "Yellow";
         GameObject handler = GameObject.Find("GameHandler");
         string label = "NO";
         if (MainMenuHandler.selected.Equals("Purple"))

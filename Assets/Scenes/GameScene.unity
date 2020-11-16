@@ -409,8 +409,9 @@ GameObject:
   - component: {fileID: 281022291}
   - component: {fileID: 281022290}
   - component: {fileID: 281022289}
+  - component: {fileID: 281022292}
   m_Layer: 0
-  m_Name: Brown player
+  m_Name: Brown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -496,6 +497,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &281022292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281022288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6abaad137a454b59b9c7e8195e3386e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &430432150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1999,8 +2012,9 @@ GameObject:
   - component: {fileID: 1624215863}
   - component: {fileID: 1624215865}
   - component: {fileID: 1624215862}
+  - component: {fileID: 1624215866}
   m_Layer: 0
-  m_Name: Yellow player
+  m_Name: Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2107,6 +2121,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1624215866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624215861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6abaad137a454b59b9c7e8195e3386e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1722922304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2119,8 +2145,9 @@ GameObject:
   - component: {fileID: 1722922306}
   - component: {fileID: 1722922308}
   - component: {fileID: 1722922305}
+  - component: {fileID: 1722922309}
   m_Layer: 0
-  m_Name: Blue player
+  m_Name: Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2227,6 +2254,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1722922309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722922304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6abaad137a454b59b9c7e8195e3386e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1795829204
 GameObject:
   m_ObjectHideFlags: 0
@@ -2771,7 +2810,7 @@ GameObject:
   - component: {fileID: 2113848474}
   - component: {fileID: 2113848471}
   m_Layer: 0
-  m_Name: Purple player
+  m_Name: Purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
