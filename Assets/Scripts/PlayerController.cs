@@ -9,22 +9,22 @@ public class PlayerController : MonoBehaviour
     // FixedUpdate is called at a fixed interval and is independent of frame rate
     void FixedUpdate()
     {
-        //MainMenuHandler.selected = "Yellow";
+        //MainMenuHandler.selected = "Purple";
         GameObject handler = GameObject.Find("GameHandler");
         string label = "NO";
-        if (MainMenuHandler.selected.Equals("Purple"))
+        if (gameObject.name.Equals("Purple"))
         {
             label = "PR";
         }
-        else if (MainMenuHandler.selected.Equals("Blue"))
+        else if (gameObject.name.Equals("Blue"))
         {
             label = "BL";
         }
-        else if (MainMenuHandler.selected.Equals("Yellow"))
+        else if (gameObject.name.Equals("Yellow"))
         {
             label = "YE";
         }
-        else if (MainMenuHandler.selected.Equals("Brown"))
+        else if (gameObject.name.Equals("Brown"))
         {
             label = "BR";
         }
@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
                 GetComponent<CircleCollider2D>().transform.localPosition = position;
 
             }
-            
+            //Debug.Log(label + "X:" + string.Format("{0:N2}", transform.position.x) + " " + label + "Y:" + string.Format("{0:N2}", transform.position.y) + " " + label + "Z:" + string.Format("{0:N2}", transform.position.z));
 
             handler.GetComponent<TcpLink>().sendMessageToServer(label + "X:" + string.Format("{0:N2}", transform.position.x) + " " + label + "Y:" + string.Format("{0:N2}", transform.position.y) + " " + label + "Z:" + string.Format("{0:N2}", transform.position.z));
         }
@@ -72,7 +72,10 @@ public class PlayerController : MonoBehaviour
             Regex yCoord = new Regex(@"(?<="+label+@"Y:)\d+");
             Regex zCoord = new Regex(@"(?<="+label+@"Z:)\d+");
             string message = handler.GetComponent<TcpLink>().serverOut();
-            transform.position = new Vector3(float.Parse(xCoord.Match(message).Value),float.Parse(yCoord.Match(message).Value));
+            if (xCoord.Match(message).Success&& xCoord.Match(message).Success&& xCoord.Match(message).Success) {
+                transform.position = new Vector3(float.Parse(xCoord.Match(message).Value), float.Parse(yCoord.Match(message).Value));
+            }
+            
         }
 
     }

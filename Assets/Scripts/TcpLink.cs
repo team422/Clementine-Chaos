@@ -14,8 +14,10 @@ public class TcpLink : MonoBehaviour
     private TcpClient socketConnection;
     private Thread clientReceiveThread;
     private string serverMessage;
-    private string clientMessage;
+
     #endregion
+
+    private static string clientMessage;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,7 @@ public class TcpLink : MonoBehaviour
         if (period > .1f)
         {
             SendMessage();
+            //Debug.Log(clientMessage);
             period = period-.1f;
         }
         period += UnityEngine.Time.deltaTime;
@@ -42,6 +45,7 @@ public class TcpLink : MonoBehaviour
     }
     public void sendMessageToServer(string input) {
         clientMessage = input;
+        //Debug.Log(clientMessage);
     }
     private void ConnectToTcpServer()
     {
@@ -100,8 +104,10 @@ public class TcpLink : MonoBehaviour
             NetworkStream stream = socketConnection.GetStream();
             if (stream.CanWrite)
             {
-          
-                // Convert string message to byte array.                 
+
+                // Convert string message to byte array.
+                Debug.Log(clientMessage);
+                Debug.Log("Sending it across...");
                 byte[] clientMessageAsByteArray = Encoding.ASCII.GetBytes(clientMessage);
                 // Write byte array to socketConnection stream.                 
                 stream.Write(clientMessageAsByteArray, 0, clientMessageAsByteArray.Length);
@@ -112,5 +118,11 @@ public class TcpLink : MonoBehaviour
         {
             Debug.Log("Socket exception: " + socketException);
         }
+    }
+    public void CloseSocket()
+    {
+        socketConnection.GetStream().Close();
+        socketConnection.Close();
+
     }
 }

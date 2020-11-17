@@ -14,17 +14,32 @@ public class MainMenuHandler : MonoBehaviour
     public static bool isPurpleSelected = false;
 
     private AsyncOperation gameLoading;
+    private bool loadingNext;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameLoading = SceneManager.LoadSceneAsync("GameScene");
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameLoading.isDone) SwitchToGame();
+        if (!selected.Equals("")) {
+            Debug.Log(selected);
+            gameObject.GetComponent<TcpLink>().CloseSocket();
+            gameLoading = SceneManager.LoadSceneAsync("GameScene");
+
+            
+
+            loadingNext = true;
+        }
+        if (loadingNext&&gameLoading.isDone)
+        {
+            Debug.Log(selected);
+            SwitchToGame();
+        }
     }
 
     void SwitchToGame() {
